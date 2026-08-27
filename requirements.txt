@@ -1,0 +1,21 @@
+customtkinter>=5.2.2
+PyMuPDF>=1.24.0
+pdfplumber>=0.11.0
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+Pillow>=10.3.0
+openpyxl>=3.1.2
+pandas>=2.2.0
+deep-translator>=1.12.0
+indic-transliteration>=2.3.55
+tkinterdnd2>=0.4.2
+tqdm>=4.66.0
+
+# System-level dependencies (install separately, NOT via pip):
+#   - Tesseract OCR engine   (https://github.com/tesseract-ocr/tesseract)
+#     Windows installer: https://github.com/UB-Mannheim/tesseract/wiki
+#     Make sure to install the "tel" (Telugu) language pack if OCR on
+#     Telugu-script rolls is needed, and add tesseract.exe to PATH.
+#   - Poppler (required by pdf2image for rendering PDF pages to images)
+#     Windows binaries: https://github.com/oschwartz10612/poppler-windows
+#     Add the poppler "bin" folder to PATH.
