@@ -1,4 +1,3 @@
-````md
 # Voter Data Extractor Pro
 
 A Windows desktop application that extracts voter records from Telangana / Andhra Pradesh Electoral Roll PDFs and fills an Excel template's **House No** and **Colony** columns by matching **EPIC numbers**.
@@ -395,4 +394,4 @@ GitHub: [Rohitreddy06](https://github.com/Rohitreddy06)
 [Voter Data Extractor Pro](https://github.com/Rohitreddy06/voter-data-extractor-pro)
 
 ```
-```
+
