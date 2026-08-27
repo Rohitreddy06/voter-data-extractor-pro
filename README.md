@@ -61,6 +61,15 @@ If a run is interrupted (crash, cancel, power loss), starting again
 on the same PDF will offer to **resume** from the last completed
 page instead of reprocessing from scratch.
 
+## Data privacy
+
+Input PDFs, Excel templates, generated workbooks, CSV exports, SQLite
+databases, resume state, and processing logs may contain personal voter
+data. Keep these files local and do not commit or publish them. The
+repository `.gitignore` excludes generated files in `database/`, `logs/`,
+and `output/`, as well as common voter-data formats. Review `git status`
+before pushing changes.
+
 ## Adjusting to your PDF's exact layout
 
 Electoral roll PDF layouts vary slightly by year and by which CEO
@@ -87,17 +96,16 @@ VoterDataExtractor/
 ├── utils.py                    # logging, resume state, stopwatch
 ├── config.py                    # paths, regexes, constants
 ├── requirements.txt
-├── logs/               # processing.log written here
-├── output/             # Completed.xlsx / exports written here
-└── database/            # voters.db (SQLite) + resume state
+├── logs/               # local processing.log (ignored)
+├── output/             # local Completed.xlsx / exports (ignored)
+└── database/           # local voters.db + resume state (ignored)
 ```
 
 ## Notes / limitations
 
 - This tool only works with **unencrypted** PDFs. Password-protected
   files will raise a clear error asking for an unlocked copy.
-- OCR accuracy on scanned rolls depends heavily on scan quality;
-  review the `logs/processing.log` file for pages that produced no
-  records.
+- OCR accuracy on scanned rolls depends heavily on scan quality; review
+  the local `logs/processing.log` file for pages that produced no records.
 - Always verify a sample of matched rows in `Completed.xlsx` against
   the source PDF before relying on the output for official use.
