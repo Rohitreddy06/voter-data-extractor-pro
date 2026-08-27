@@ -389,9 +389,12 @@ Software Developer | AI & Cloud Technologies
 
 GitHub: [Rohitreddy06](https://github.com/Rohitreddy06)
 
-## Repository
 
-[Voter Data Extractor Pro](https://github.com/Rohitreddy06/voter-data-extractor-pro)
+## ⭐ Support
+
+If you find this project useful, please consider giving it a ⭐ on GitHub.
+
+[⭐ Star Voter Data Extractor Pro](https://github.com/Rohitreddy06/voter-data-extractor-pro)
 
 ```
 
