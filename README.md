@@ -61,6 +61,24 @@ If a run is interrupted (crash, cancel, power loss), starting again
 on the same PDF will offer to **resume** from the last completed
 page instead of reprocessing from scratch.
 
+## Screenshots
+
+### Main interface
+
+![Main interface](screenshots/main-interface.png)
+
+### PDF processing
+
+![PDF processing](screenshots/pdf-processing.png)
+
+### Excel matching
+
+![Excel matching](screenshots/excel-matching.png)
+
+### Search results
+
+![Search results](screenshots/search-results.png)
+
 ## Data privacy
 
 Input PDFs, Excel templates, generated workbooks, CSV exports, SQLite
