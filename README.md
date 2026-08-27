@@ -5,8 +5,9 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
 
 ## ✨ Features
 
-- Auto-detects text-based vs. scanned PDF pages; OCRs scanned pages (English + Telugu) with Tesseract.
-- Parses each page into individual voter records:
+- Auto-detects text-based and scanned PDF pages.
+- Uses Tesseract OCR for scanned pages with English and Telugu language support.
+- Parses individual voter records, including:
   - EPIC
   - Name
   - Relative Name
@@ -16,19 +17,19 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
   - Serial No
   - Age
   - Gender
-- Stores extracted records in an indexed SQLite database, so the PDF is processed once and later searches can be performed directly from the database.
-- Matches every EPIC number in the Excel template against the database.
+- Stores extracted records in an indexed SQLite database.
+- Processes the PDF once and uses the database for subsequent searches and matching.
+- Matches EPIC numbers from an Excel template against the extracted database.
 - Fills **House No** and **Colony** for matched records.
 - Writes `NOT FOUND` where no matching EPIC exists.
 - Detects and flags duplicate EPIC values.
-- Optional Telugu → English **transliteration** of addresses, for example `కొంపల్లి` → `Kompally`.
+- Supports optional Telugu → English **transliteration** of addresses.
 - Preserves the original Excel template's formatting, colors, and formulas.
-- Updates only the required target cells.
-- Dark-themed CustomTkinter GUI.
-- File selection and drag & drop support.
-- Live progress bar and processing status.
-- Displays elapsed time, records found, matched records, remaining records, and live logs.
-- Uses background threads so the GUI remains responsive during long PDF processing.
+- Updates only the required target cells in the Excel workbook.
+- Provides a dark-themed CustomTkinter desktop interface.
+- Supports file selection and drag & drop.
+- Displays live processing progress, elapsed time, record counts, and logs.
+- Uses background threads to keep the GUI responsive during long PDF processing.
 - Supports resume-after-interruption.
 - Supports CSV and SQLite database export.
 - Provides search by EPIC, Name, and House No.
@@ -37,26 +38,28 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
 
 ### Main Interface
 
-<img src="./screenshots/main-interface.png" alt="Voter Data Extractor Pro - Main Interface" width="900">
+![Voter Data Extractor Pro - Main Interface](./screenshots/main-interface.png)
 
 ### PDF Processing
 
-<img src="./screenshots/pdf-processing.png" alt="Voter Data Extractor Pro - PDF Processing" width="900">
+![Voter Data Extractor Pro - PDF Processing](./screenshots/pdf-processing.png)
 
 ### Excel EPIC Matching
 
-<img src="./screenshots/excel-matching.png" alt="Voter Data Extractor Pro - Excel EPIC Matching" width="900">
+![Voter Data Extractor Pro - Excel EPIC Matching](./screenshots/excel-matching.png)
 
 ### Search and Results
 
-<img src="./screenshots/search-results.png" alt="Voter Data Extractor Pro - Search and Results" width="900">
+![Voter Data Extractor Pro - Search and Results](./screenshots/search-results.png)
 
 ## ⚙️ Requirements
 
 - Windows
 - Python 3.12 or newer
-- Tesseract OCR, including English and Telugu language data files when OCR is required
-- Poppler, required by `pdf2image` for scanned-page rendering
+- Tesseract OCR
+- English Tesseract language data
+- Telugu (`tel`) Tesseract language data
+- Poppler
 
 Text-based PDFs can be processed without OCR. Tesseract and Poppler are required when the electoral roll contains image-only or scanned pages.
 
@@ -66,13 +69,13 @@ Text-based PDFs can be processed without OCR. Tesseract and Poppler are required
 
 Install **Python 3.12 or newer**.
 
-### 2. Install System Dependencies
+### 2. Install Tesseract OCR
 
-These dependencies are installed separately and are **not installed through pip**.
-
-#### Tesseract OCR
+Install Tesseract OCR for Windows:
 
 [Tesseract OCR for Windows](https://github.com/UB-Mannheim/tesseract/wiki)
+
+During installation:
 
 - Install the English language pack.
 - Install the Telugu (`tel`) language pack.
@@ -84,14 +87,13 @@ Verify the installation:
 tesseract --version
 ````
 
-#### Poppler
+### 3. Install Poppler
 
 Poppler is required for rendering scanned PDF pages.
 
 [Poppler for Windows](https://github.com/oschwartz10612/poppler-windows)
 
-* Extract Poppler.
-* Add its `bin` folder to your system `PATH`.
+Extract Poppler and add its `bin` directory to your system `PATH`.
 
 Verify the installation:
 
@@ -101,7 +103,7 @@ pdftoppm -h
 
 After modifying `PATH`, open a new PowerShell window.
 
-### 3. Install Python Dependencies
+### 4. Install Python Dependencies
 
 From the project directory:
 
@@ -120,13 +122,20 @@ python main.py
 ### Application Workflow
 
 1. Click **Select PDF** and choose the electoral-roll PDF.
-2. Click **Select Excel** and choose your Excel template.
+2. Click **Select Excel** and choose the Excel template.
 3. Choose an **Output Folder**.
 4. Enable or disable **Translate Telugu → English** as required.
 5. Enable or disable **Use OCR** as required.
 6. Click **Start**.
 
-The application displays processing progress, elapsed time, record counts, and live logs.
+The application displays:
+
+* Processing progress
+* Elapsed time
+* Records found
+* Matched records
+* Remaining records
+* Live processing logs
 
 When processing is complete, the generated workbook is saved as:
 
@@ -184,7 +193,7 @@ Duplicate EPIC values are detected and flagged.
 
 Extracted voter records are stored locally in an indexed SQLite database.
 
-This allows later searches and EPIC matching without repeatedly processing the original PDF.
+The database allows subsequent searches and EPIC matching without repeatedly processing the original PDF.
 
 ### Supported Searches
 
@@ -330,7 +339,7 @@ The application is designed for large electoral-roll datasets through:
 * Automatic OCR fallback
 * SQLite batch insertion
 * Indexed database searches
-* Avoiding repeated PDF processing
+* Avoiding repeated PDF scanning
 * Background processing
 * Resume support
 
