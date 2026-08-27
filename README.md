@@ -16,7 +16,7 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
   - Serial No
   - Age
   - Gender
-- Stores extracted records in an indexed SQLite database, so the PDF is only processed once and later searches can be performed directly from the database.
+- Stores extracted records in an indexed SQLite database, so the PDF is processed once and later searches can be performed directly from the database.
 - Matches every EPIC number in the Excel template against the database.
 - Fills **House No** and **Colony** for matched records.
 - Writes `NOT FOUND` where no matching EPIC exists.
@@ -37,19 +37,19 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
 
 ### Main Interface
 
-![Voter Data Extractor Pro - Main Interface](screenshots/main-interface.png)
+<img src="./screenshots/main-interface.png" alt="Voter Data Extractor Pro - Main Interface" width="900">
 
 ### PDF Processing
 
-![Voter Data Extractor Pro - PDF Processing](screenshots/pdf-processing.png)
+<img src="./screenshots/pdf-processing.png" alt="Voter Data Extractor Pro - PDF Processing" width="900">
 
 ### Excel EPIC Matching
 
-![Voter Data Extractor Pro - Excel Matching](screenshots/excel-matching.png)
+<img src="./screenshots/excel-matching.png" alt="Voter Data Extractor Pro - Excel EPIC Matching" width="900">
 
 ### Search and Results
 
-![Voter Data Extractor Pro - Search and Results](screenshots/search-results.png)
+<img src="./screenshots/search-results.png" alt="Voter Data Extractor Pro - Search and Results" width="900">
 
 ## ⚙️ Requirements
 
