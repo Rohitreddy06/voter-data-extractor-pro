@@ -38,19 +38,19 @@ A Windows desktop application that extracts voter records from Telangana / Andhr
 
 ### Main Interface
 
-![Voter Data Extractor Pro - Main Interface](./screenshots/main-interface.png)
+<img src="./screenshots/main-interface.png" width="100%">
 
 ### PDF Processing
 
-![Voter Data Extractor Pro - PDF Processing](./screenshots/pdf-processing.png)
+<img src="./screenshots/pdf-processing.png" width="100%">
 
 ### Excel EPIC Matching
 
-![Voter Data Extractor Pro - Excel EPIC Matching](./screenshots/excel-matching.png)
+<img src="./screenshots/excel-matching.png" width="100%">
 
 ### Search and Results
 
-![Voter Data Extractor Pro - Search and Results](./screenshots/search-results.png)
+<img src="./screenshots/search-results.png" width="100%">
 
 ## ⚙️ Requirements
 
